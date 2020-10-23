@@ -1,44 +1,27 @@
 # clj-exp
 
-FIXME: description
-
-## Installation
-
-Download from http://example.com/FIXME.
+Clojure experiments using Leiningen for building a simple http server
 
 ## Usage
 
-FIXME: explanation
+First spin up any Clojure REPL
 
-    $ java -jar clj-exp-0.1.0-standalone.jar [args]
+    $ lein repl
 
-## Options
+Then require clj-exp.core, with an optional alias to quickly access it's namespace
 
-FIXME: listing of options this app accepts.
+    (user) => (require '[clj-exp.core :as c])
 
-## Examples
+Right away you can get the server up and running
 
-...
+    (user) => (def server (c/create-server)
+ 
+And you're good to go
+    
+-
+    
+Afterwards you can pass the created server to the stop-server function to put it down
 
-### Bugs
+    (user) => (c/stop-server server)
 
-...
 
-### Any Other Sections
-### That You Think
-### Might be Useful
-
-## License
-
-Copyright © 2020 FIXME
-
-This program and the accompanying materials are made available under the
-terms of the Eclipse Public License 2.0 which is available at
-http://www.eclipse.org/legal/epl-2.0.
-
-This Source Code may also be made available under the following Secondary
-Licenses when the conditions for such availability set forth in the Eclipse
-Public License, v. 2.0 are satisfied: GNU General Public License as published by
-the Free Software Foundation, either version 2 of the License, or (at your
-option) any later version, with the GNU Classpath Exception which is available
-at https://www.gnu.org/software/classpath/license.html.
