@@ -1,7 +1,13 @@
 (ns clj-exp.core
-  (:gen-class))
+  (:require [org.httpkit.server :as s]))
 
-(defn -main
-  "I don't do a whole lot ... yet."
-  [& args]
-  (println "Hello, World!"))
+(defn handler [req]
+  {:status 200
+   :headers {"Content-Type" "text/html"}
+   :body "<h1>Hello World</h1>"})
+
+(defn create-server []
+  (s/run-server handler {:port 5000}))
+
+(defn stop-server [server]
+  (server :timeout 100))
